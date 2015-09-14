@@ -20,7 +20,7 @@ func (d *Dockeron) MakeContainer(job *Job) (string, error) {
 		Image: job.Image,
 		Env:   env,
 	}
-	containerId, err := d.client.CreateContainer(containerConfig, job.Name)
+	containerId, err := d.client.CreateContainer(containerConfig, "")
 	if err != nil {
 		return "", err
 	}
